@@ -12,7 +12,7 @@ async fn main() {
      .route("/", get(main_route))
      .route("/test", get(test));
 
-     let addr = SocketAddr::from(([0, 0, 0, 0], 7878));
+     let addr = SocketAddr::from(([0, 0, 0, 0], 443));
      axum_server::bind_rustls(addr, tls_config)
          .serve(app.into_make_service())
          .await
